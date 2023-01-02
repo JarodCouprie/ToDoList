@@ -1,3 +1,12 @@
+:root{
+    --background-color: #191919;
+    /* --background-color: #262329; */
+    /* --secondary-color: #92aa88; */
+    /* --secondary-color: #dfa06e; */
+    --secondary-color: #904e55;
+    --light-text-color: #ebe6ee;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,3 +16,166 @@
     list-style-type: none;
 }
 
+/*-----Style for the alert when fetch is impossible-----*/
+
+.alert{
+    width: 60vw;
+    height: 30px;
+    background: rgb(248, 165, 165);
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgb(102, 11, 11);
+    color: rgb(102, 11, 11);
+}
+
+body{
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin: 20px;
+    font-size: 3rem;
+    color: var(--secondary-color);
+}
+
+/*-----FORM-----*/
+
+form{
+    width: 60vw;
+    display: flex;
+    align-items: center;
+}
+
+#form-field{
+    width: 100%;
+    height: 80px;
+    font-size: 2rem;
+    background: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 0 0 10px;
+    color: var(--light-text-color);
+    border: 2px solid var(--light-text-color);
+}
+
+#form-field::placeholder{
+    color: var(--light-text-color);
+}
+
+#form-field:focus{
+    background: var(--secondary-color);
+}
+
+#add-button{
+    width: 200px;
+    height: 80px;
+    cursor: pointer;
+    border: solid 2px var(--secondary-color);
+    font-size: 3rem;
+    transition: all 0.2s ease-in-out;
+    background: var(--secondary-color);
+    color: var(--light-text-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#add-button:hover{
+    border-color: var(--light-text-color);
+    background: var(--light-text-color);
+    color: var(--secondary-color);
+}
+
+/*-----Selector-----*/
+
+#task-button-container{
+    margin: 40px 0px 20px;
+    display: flex;
+}
+
+.task-button{
+    width: 120px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+    background: none;
+    color: var(--light-text-color);
+}
+
+.task-button:not(.active):hover{
+    background: var(--secondary-color);
+}
+
+.active{
+    background: var(--light-text-color);
+    color: var(--background-color);
+}
+
+#task-button-1{
+    border-left: solid 2px var(--light-text-color);
+    border-bottom: solid 2px var(--light-text-color);
+    border-top: solid 2px var(--light-text-color);
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#task-button-2{
+    border: 2px solid var(--light-text-color);
+}
+
+#task-button-3{
+    border-right: solid 2px var(--light-text-color);
+    border-bottom: solid 2px var(--light-text-color);
+    border-top: solid 2px var(--light-text-color);
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*-----Li style-----*/
+
+li{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--secondary-color);
+    margin-bottom: 10px;
+    padding: 5px;
+    border: solid 1px var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.label-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    background: var(--light-text-color);
+    border: solid 2px var(--background-color);
+    cursor: pointer;
+}
+
+
+
+.hide-completed .is-completed,
+.hide-todo .todo:not(.is-completed){
+    display: none!important;
+}
